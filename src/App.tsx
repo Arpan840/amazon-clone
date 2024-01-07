@@ -3,9 +3,11 @@ import Home from "./Pages/Home";
 import Navbar from "./components/Navbar";
 import NavMenu from "./components/NavMenu";
 import Products from "./Pages/Products";
+import AllProductsState from "./context/ProductsContext/products.fetchApiContext";
 
 function App() {
   return (
+    <AllProductsState>
     <Router>
       <Navbar />
       <NavMenu/>
@@ -14,6 +16,7 @@ function App() {
         <Route path="/products" element={<Products/>}/>
       </Routes>
     </Router>
+    </AllProductsState>
   );
 }
 

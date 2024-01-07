@@ -1,5 +1,5 @@
-import { Box, Card } from "@mui/material";
-import { product } from "../imterfaces/productInterface";
+import { Box, Card, CardContent } from "@mui/material";
+import { product } from "../interfaces/productInterface";
 
 const ProductCard = ({
   id,
@@ -12,7 +12,10 @@ const ProductCard = ({
 }: product) => {
   return (
     <Box>
-      <Card sx={{ display: "flex", gap: "3%", alignItems: "center" }}>
+      <Card
+        variant="outlined"
+        sx={{ display: "flex", gap: "3%", alignItems: "center", height:'50vh' }}
+      >
         <Box>
           <img src={image} alt={title} width="250px" />
         </Box>
@@ -22,7 +25,6 @@ const ProductCard = ({
           <h3>{category}</h3>
           <h1>${price}</h1>
           <p>Ships to India</p>
-          
         </Box>
       </Card>
     </Box>

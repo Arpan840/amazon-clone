@@ -12,7 +12,7 @@ import axios from "axios";
 //   rating: object;
 // }
 
-const AllProducts = (props: any) => {
+const AllProductsState = (props: any) => {
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -36,4 +36,4 @@ const AllProducts = (props: any) => {
   );
 };
 
-export default AllProducts;
+export default AllProductsState;

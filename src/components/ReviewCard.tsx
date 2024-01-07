@@ -1,24 +1,43 @@
+import { product } from "../interfaces/productInterface";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-
 import Typography from "@mui/material/Typography";
+import { Button } from "@mui/material";
+import { useState } from "react";
 
-export default function ReviewCard() {
+export default function ReviewCard({
+  id,
+  title,
+  price,
+  description,
+  category,
+  image,
+  rating: {},
+}: product) {
   return (
-    <Card sx={{ maxWidth: 345, height: "45vh", width: "18vw" }}>
-      <CardHeader title="Gaming Accessories" />
+    <Card
+      variant="outlined"
+      sx={{
+        maxWidth: 345,
+        height: "45vh",
+        width: "18vw",
+        margin: "3%",
+        overflow: "scroll",
+      }}
+    >
+      <CardHeader title={title} />
       <CardMedia
         component="img"
         height="200"
-        image="https://cdn.shopify.com/s/files/1/0078/8715/9367/files/EFFYSETUP_-_Christina_astronuggie_Executive_Office_L-Shaped_Desk_480x480.jpg?v=1631259234"
+        image={image}
         alt="Paella dish"
         sx={{ width: "90%", margin: "auto" }}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Shop Now
+          {description}
         </Typography>
       </CardContent>
     </Card>
